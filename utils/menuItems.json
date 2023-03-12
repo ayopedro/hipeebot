@@ -1,0 +1,42 @@
+[
+  {
+    "id": 11,
+    "food": "Jollof Rice"
+  },
+  {
+    "id": 12,
+    "food": "Fried Rice"
+  },
+  {
+    "id": 13,
+    "food": "Village Rice"
+  },
+  {
+    "id": 14,
+    "food": "Pizza"
+  },
+  {
+    "id": 15,
+    "food": "Pounded Yam"
+  },
+  {
+    "id": 16,
+    "food": "French Fries"
+  },
+  {
+    "id": 17,
+    "food": "Chicken and chips"
+  },
+  {
+    "id": 18,
+    "food": "Shawarma"
+  },
+  {
+    "id": 19,
+    "food": "Spaghetti"
+  },
+  {
+    "id": 20,
+    "food": "Barbecue Fish"
+  }
+]
