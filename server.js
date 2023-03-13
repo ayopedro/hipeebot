@@ -87,7 +87,7 @@ io.on("connection", (socket) => {
               <br /><br />
               Would you like to add to your cart? if yes, kindly reply with corresponding number
               <br /><br />
-              Otherwise, type 99 to checkout or 97 to see the items in your cart`
+              Otherwise, type 99 to checkout your order or 97 to see the items in your cart`
             );
           } else {
             botMessage(`Invalid input.`);
@@ -97,7 +97,6 @@ io.on("connection", (socket) => {
           if (socket.request.session.currentOrder.length === 0) {
             botMessage("Cart empty!. Kindly add an order to cart");
           } else {
-            console.log(socket.request.session.currentOrder)
             const currentOrderString =
               socket.request.session.currentOrder.map(item => item.food).join(", ");
             botMessage(`Your current order(s):<br/><br/> ${currentOrderString}`);
@@ -110,7 +109,7 @@ io.on("connection", (socket) => {
             );
           } else {
             const orderHistoryString = orderHistory
-              .map((order, index) => `Order ${index + 1}: ${order.join(", ")}<br/>`)
+              .map((order, index) => `Order ${index + 1}: ${order.food}<br/>`)
               .join("\n");
             botMessage(`Your order history: <br/><br/>${orderHistoryString}`);
           }
@@ -121,7 +120,7 @@ io.on("connection", (socket) => {
               "Cannot place order on empty cart. Kindly add to your cart"
             );
           } else {
-            orderHistory.push(socket.request.session.currentOrder);
+            orderHistory.push(...socket.request.session.currentOrder);
             botMessage("Order placed!");
             socket.request.session.currentOrder = [];
           }
