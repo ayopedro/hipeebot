@@ -97,8 +97,9 @@ io.on("connection", (socket) => {
           if (socket.request.session.currentOrder.length === 0) {
             botMessage("Cart empty!. Kindly add an order to cart");
           } else {
+            console.log(socket.request.session.currentOrder)
             const currentOrderString =
-              socket.request.session.currentOrder.join(", ");
+              socket.request.session.currentOrder.map(item => item.food).join(", ");
             botMessage(`Your current order(s):<br/><br/> ${currentOrderString}`);
           }
           break;
